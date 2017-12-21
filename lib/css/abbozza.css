@@ -179,15 +179,19 @@ DIV.license_div A {
 
 
 #upload {
-  right: 120px;
+  right: 170px;
 }
 
 #new {
-  right: 70px;
+  right: 120px;
 }
 
 #info {
-	right: 20px;
+	right: 70px;
+}
+
+#connect {
+    right: 20px;
 }
 
 #workspace {
