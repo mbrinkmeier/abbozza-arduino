@@ -1,0 +1,166 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+<block deletable="false" id="main" inline="false" type="main" x="282" y="68">
+<mutation>
+<symbols>
+<symbol name="led" symboltype="0" type="NUMBER"/>
+</symbols>
+</mutation>
+<value name="NUMBER">
+<block id="US*4Xgt^z{]~i!n06zv4" type="math_number">
+<field name="VALUE">127</field>
+<data>frameNumber</data>
+</block>
+</value>
+<value name="SPEED">
+<block id="qGQyGp{}^0@xp5]G)[S]" type="math_number">
+<field name="VALUE">40</field>
+<data>frameDelay</data>
+</block>
+</value>
+<statement name="LOOP_STATEMENTS">
+<block id="TMCcH0oaf[7AU7d.q*fO" type="loop_count_dir">
+<field name="VAR">led</field>
+<field name="DIR">ASC</field>
+<data>schleife</data>
+<value name="FROM">
+<block id="eh#dlqb,@^hw?xU*0:Ro" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+<value name="TO">
+<block id="es_Pf{=Q6/IMPt*/tPG-" type="math_number">
+<field name="VALUE">126</field>
+</block>
+</value>
+<statement name="STATEMENTS">
+<block id="A}R*~QB!=O+1)MheyRN{" type="dev_neopixel_rgb">
+<data>schwarz</data>
+<value name="NUMBER">
+<block id="H)u[?[,%v@UnN@QO0,y," type="var_block">
+<field name="NAME">led</field>
+</block>
+</value>
+<value name="RED">
+<block id="et@0-Y9uF-VIzv-5Vf.P" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+<value name="GREEN">
+<block id="hLdrQCH@EQ%;2S%e3+N#" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+<value name="BLUE">
+<block id="QoEP~LP;S8QslYIzYZsm" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block id="?s?gIm,;9{f;5akmKMgH" type="dev_neopixel_rgb">
+<data>rot</data>
+<value name="NUMBER">
+<block id="ovOU=b~kPkA*GO4fvAcp" type="dev_neopixel_step"/>
+</value>
+<value name="RED">
+<block id="x=`gLP([@SdHxY3FJ@La" type="math_number">
+<field name="VALUE">255</field>
+</block>
+</value>
+<value name="GREEN">
+<block id="P4kbw`h++@uA|8g?=5,h" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+<value name="BLUE">
+<block id="5u4~Qp8A^@S~!n)MTKSf" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<description/>
+<options apply="no" protected="no">{option.usb=false,option.operations=false,option.use_double=false,option.colorDefault=false,option.i2c_slave=false,option.i2c_no=false,option.multArrays=false,option.devices=false,option.messages=false,option.linArrays=false,option.localVars=false,option.serial=false,option.interrupts=false,option.colorType=false,option.use_long=false,option.colorCategory=false,option.advanced=false,option.i2c_master=false,option.noArrays=false}</options>
+<task height="562" width="738">&lt;page&gt;
+&lt;h1&gt;Programmiere Dein eigenes Lauflicht!&lt;/h1&gt;
+&lt;p&gt;
+  Das &lt;b&gt;Lauflicht&lt;/b&gt; des Mantels funktioniert wie ein Trickfilm. Es werden
+  schnell aufeinanderfolgende einzelne Bilder gezeigt. Dadurch sieht es aus, als
+  würden sich die Farben bewegen. Die einzelnen Bilder werden &lt;b&gt;Frames&lt;/b&gt; genannt.
+&lt;/p&gt;
+&lt;img width="75px" src="sketches/img/animation1.png"&gt;
+&lt;img width="75px" src="sketches/img/animation2.png"&gt;
+&lt;img width="75px" src="sketches/img/animation3.png"&gt;
+&lt;img width="75px" src="sketches/img/animation4.png"&gt;
+&lt;img width="75px" src="sketches/img/animation5.png"&gt;
+&lt;img width="75px" src="sketches/img/animation6.png"&gt;
+&lt;img width="75px" src="sketches/img/animation7.png"&gt;
+&lt;img width="75px" src="sketches/img/animation.gif"&gt;
+&lt;p&gt;
+  Das Programm links lässt ein rotes &lt;b&gt;Pixel&lt;/b&gt; entlang des LED-Streifens am Saum wandern.
+&lt;/p&gt;
+&lt;p&gt;
+  Da der Streifen &lt;b&gt;127&lt;/b&gt; LEDs hat, benötigen wir 127 Frames, nummeriert von 0 bis 126.
+&lt;/p&gt;
+&lt;p&gt;
+  Die Zeit zwischen den Frames bestimmt, wie schnell sich das Pixel bewegt. Filme werden
+  üblicherweise mit 24 oder 25 Bildern pro Sekunde abgespielt. dies sind etwa 40 Millisekunden
+  zwischen den einzelnen Frames (40 = 1000 / 25).
+&lt;/p&gt;
+&lt;p&gt;
+  Das Programm setzt für jeden Frame erstmal alle LEDs auf Schwarz. Anschließend wird das
+  aktuelle Pixel auf Rot gesetzt.
+&lt;/p&gt;
+&lt;abbozza-hint block="frameNumber" dx="-120" dy="-60" width="15em" height="2.25em"&gt;
+  Das Lauflicht hat 127 Frames.
+&lt;/abbozza-hint&gt;
+&lt;abbozza-hint block="frameDelay" dx="100" dy="-60" width="15em" height="3.5em"&gt;
+  Es wird mit etwa 40 Frames pro Sekunde abgespielt
+&lt;/abbozza-hint&gt;
+&lt;abbozza-hint block="schwarz" dx="-320" dy="0" width="15em" height="3.5em"&gt;
+  Alle LEDs werden auf schwarz gesetzt.
+&lt;/abbozza-hint&gt;
+&lt;abbozza-hint block="rot" dx="-320" dy="0" width="15em" height="3.5em"&gt;
+  Die aktuelle LED wird auf rot gesetzt.
+&lt;/abbozza-hint&gt;
+&lt;abbozza-hint block="schleife" dx="-320" dy="-60" width="16em" height="2.25em"&gt;
+  Alle 127 LEDs werden durchlaufen.
+&lt;/abbozza-hint&gt;&lt;/page&gt;
+&lt;page&gt;
+&lt;h2&gt;
+  Herausforderungen
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+  Verändere die laufende Farbe und / oder die Farbe der anderen LEDs.
+&lt;/li&gt;
+&lt;li&gt;Lasse das Pixel rückwärts laufen. (Tipp: Das 4. letzte Pixel hat die
+Nummer 122 = 126-4).
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;
+&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="Abbozza.uploadSketch()"&gt;Starte Dein Programm!
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;p&gt;
+  Du kannst über die Manschette auch dein Programm aktivieren und die Geschwindigkeit
+  verändern.
+&lt;/p&gt;
+&lt;h3&gt;Mehr Beispiele&lt;/h3&gt;
+
+&lt;center&gt;
+&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="document.location.replace('?sketches/regenbogen.abz')"&gt;Die Farben des Regenbogens
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="document.location.replace('?sketches/lauflicht.abz')"&gt;Ein aufwändigeres Lauflicht
+&lt;/div&gt;
+&lt;/center&gt;
+
+&lt;/page&gt;</task>
+<system>arduino</system>
+</xml>

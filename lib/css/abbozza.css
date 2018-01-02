@@ -177,6 +177,17 @@ DIV.license_div A {
     color: gray;
 }
 
+#save {
+    right: 220px;
+}
+
+#load {
+    right: 270px;
+}
+
+#config {
+    right: 320px;
+}
 
 #upload {
   right: 170px;

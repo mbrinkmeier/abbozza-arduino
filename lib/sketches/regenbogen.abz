@@ -1,0 +1,146 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+<block deletable="false" id="main" inline="false" type="main" x="282" y="68">
+<mutation>
+<symbols>
+<symbol name="led" symboltype="0" type="NUMBER"/>
+</symbols>
+</mutation>
+<value name="NUMBER">
+<block id="US*4Xgt^z{]~i!n06zv4" type="math_number">
+<field name="VALUE">1</field>
+<data>frameNumber</data>
+</block>
+</value>
+<value name="SPEED">
+<block id="qGQyGp{}^0@xp5]G)[S]" type="math_number">
+<field name="VALUE">40</field>
+<data>frameDelay</data>
+</block>
+</value>
+<statement name="LOOP_STATEMENTS">
+<block id="P}*X/V/{XfwDS?nBwH@-" type="loop_count_dir">
+<field name="VAR">led</field>
+<field name="DIR">ASC</field>
+<value name="FROM">
+<block id="+~F3[QpOKCib-6{t~q[p" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+<value name="TO">
+<block id="U!Z]7`?2GO?/@7!J7@C*" type="math_number">
+<field name="VALUE">126</field>
+</block>
+</value>
+<statement name="STATEMENTS">
+<block id="[Otm*gy8CF4u3nqco,#4" type="dev_neopixel_rgb">
+<value name="NUMBER">
+<block id="[dpo8#7AG6cCF,G+IXyO" type="var_block">
+<field name="NAME">led</field>
+</block>
+</value>
+<value name="RED">
+<block id=",{GPT^_oC5Z0SlaoJul=" type="dev_neopixel_rred">
+<value name="STEPS">
+<block id="YUZ_dx9@;~61O(2U4c`F" type="math_number">
+<field name="VALUE">127</field>
+</block>
+</value>
+<value name="STEP">
+<block id="C-y.8uky~CTa{D+.PD(a" type="var_block">
+<field name="NAME">led</field>
+</block>
+</value>
+</block>
+</value>
+<value name="GREEN">
+<block id=":Z7GQ{a=,/s=mX#AUa)R" type="dev_neopixel_rgreen">
+<value name="STEPS">
+<block id="70Mr[/T(e=qmwTv9dc:q" type="math_number">
+<field name="VALUE">127</field>
+</block>
+</value>
+<value name="STEP">
+<block id="w2|:5wvOw/Sw@+DQ=k=." type="var_block">
+<field name="NAME">led</field>
+</block>
+</value>
+</block>
+</value>
+<value name="BLUE">
+<block id="HH{RsO]Q!}/0z{%%I7uh" type="dev_neopixel_rblue">
+<value name="STEPS">
+<block id="Y}VyN-F}eIU(OPuzNq`e" type="math_number">
+<field name="VALUE">127</field>
+</block>
+</value>
+<value name="STEP">
+<block id="EYTH2v.uo/!}qbSm}-S4" type="var_block">
+<field name="NAME">led</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+<block id="+MG(tT(a}_Ze^}lEiIwI" type="dev_neopixel_step" x="536" y="511">
+<data>helfer</data>
+</block>
+<description/>
+<options apply="no" protected="no">{option.usb=false,option.operations=false,option.use_double=false,option.colorDefault=false,option.i2c_slave=false,option.i2c_no=false,option.multArrays=false,option.devices=false,option.messages=false,option.localVars=false,option.linArrays=false,option.serial=false,option.interrupts=false,option.colorType=false,option.use_long=false,option.advanced=false,option.colorCategory=false,option.noArrays=false,option.i2c_master=false}</options>
+<task height="660" width="758">&lt;page&gt;
+&lt;h1&gt;Die Farben des Regenbogens&lt;/h1&gt;
+&lt;p&gt;
+  Mit den Farben Rot, Grün und Blau kann man alle sichtbaren Farben mischen. Dabei gibt man
+  an, wie hell welche Farbe leuchten soll.
+&lt;/p&gt;
+&lt;p&gt;
+  Das Bild unten zeigt, wie man eine Art Regenbogen erzeugen kann. Dabei gibt man die
+  Position als Winkel in einem Kreis an, da sich der Farbverlauf am Ende wieder schließt.
+&lt;/p&gt;
+&lt;center&gt;
+&lt;img src="sketches/img/Regenbogen.png"&gt;
+&lt;/center&gt;
+&lt;p&gt;
+  Für die Rot-, Grün- und Blauanteile stehen drei Blöcke zu Verfügung.
+  Dabei gibt der erste Wert an, wieviele Schritte man auf dem Farbkreis insgesamt hat (in unserem
+  Fall 127, einer für jede LED).
+  Die zweite Zahl gibt an, welchen Schritt man darstellen möchte.
+&lt;/p&gt;
+&lt;/page&gt;
+&lt;page&gt;
+&lt;h3&gt;Ein Lauflicxht ohne Bewegung&lt;/h3&gt;
+&lt;p&gt;
+  Das Beispielprogramm lässt jede LED in einer der Farben des Verlaus leuchten. Allerdings bewegt 
+  sich nichts.
+&lt;/p&gt;
+&lt;p&gt;
+  Ändere das Programm so, dass zwar alle LEDs die selbe Farbe haben, diese sich aber mit der
+  Zeit ändert.
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;b&gt;Tipps:&lt;/b&gt; Du musst die Anzahl der Frames ändern und der Schritt für die Regenbogen-Farben
+  muss sich verändern.
+&lt;/p&gt;
+&lt;abbozza-hint block="helfer" width="15em" dx="-40" dy="40" height="3.5em"&gt;
+  Dieser Block könnte hilfreich sein (auch mehrmals).
+&lt;/abbozza-hint&gt;
+&lt;center&gt;
+&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="Abbozza.uploadSketch()"&gt;Starte Dein Programm!
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;h3&gt;Mehr Beispiele&lt;/h3&gt;
+&lt;center&gt;
+&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="document.location.replace('?sketches/start.abz')"&gt;Zurück zum Anfang
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="document.location.replace('?sketches/lauflicht.abz')"&gt;Ein aufwändigeres Lauflicht
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;/page&gt;
+</task>
+<system>arduino</system>
+</xml>

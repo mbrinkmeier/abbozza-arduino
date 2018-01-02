@@ -1,0 +1,304 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+<block deletable="false" id="main" inline="false" type="main" x="76" y="44">
+<mutation>
+<symbols>
+<symbol name="led" symboltype="0" type="NUMBER"/>
+<symbol name="intervall_laenge" symboltype="0" type="NUMBER"/>
+<symbol name="schritt_laenge" symboltype="0" type="NUMBER"/>
+<symbol name="farbe" symboltype="0" type="NUMBER"/>
+<symbol name="pos" symboltype="0" type="NUMBER"/>
+<symbol name="intervall" symboltype="0" type="NUMBER"/>
+</symbols>
+</mutation>
+<value name="NUMBER">
+<block id="US*4Xgt^z{]~i!n06zv4" type="math_number">
+<field name="VALUE">127</field>
+<data>frameNumber</data>
+</block>
+</value>
+<value name="SPEED">
+<block id="qGQyGp{}^0@xp5]G)[S]" type="math_number">
+<field name="VALUE">127</field>
+<data>frameDelay</data>
+</block>
+</value>
+<statement name="LOOP_STATEMENTS">
+<block id="N!5i@SlNqHm#Wewcl]3T" type="var_assign">
+<value name="LEFT">
+<block id="4r`5NjGDzF4^TAQDd4y," type="var_block">
+<field name="NAME">intervall_laenge</field>
+</block>
+</value>
+<value name="RIGHT">
+<block id="A#d6/2jfS3jutTCO;Y@:" type="math_number">
+<field name="VALUE">1</field>
+</block>
+</value>
+<next>
+<block id="909zzdRSF3QRU)A@19qT" type="var_assign">
+<value name="LEFT">
+<block id="^Zi]bElX[fN2qa7I+2HQ" type="var_block">
+<field name="NAME">schritt_laenge</field>
+</block>
+</value>
+<value name="RIGHT">
+<block id="DXvRJA3@2APVkgt(4R9M" type="math_number">
+<field name="VALUE">1</field>
+</block>
+</value>
+<next>
+<block id="f/?[g}V}5MR2_`hS.,o^" type="loop_count_dir">
+<field name="VAR">led</field>
+<field name="DIR">ASC</field>
+<value name="FROM">
+<block id="#bi(k0EEwlersDW:OY7~" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+<value name="TO">
+<block id="A.?ck!Djc73chb:B8`p4" type="math_number">
+<field name="VALUE">126</field>
+</block>
+</value>
+<statement name="STATEMENTS">
+<block id="rbE+b!oAL4YwxDCuk=qy" type="var_assign">
+<data>rechnung</data>
+<value name="LEFT">
+<block id="w1d=v9Fgo#_7Qi/oZZ@d" type="var_block">
+<field name="NAME">pos</field>
+</block>
+</value>
+<value name="RIGHT">
+<block id="4(ZvvV?`~/3GSchon[j*" type="math_calc">
+<field name="OP">PLUS</field>
+<value name="LEFT">
+<block id="]{.]`n08U%Gn{s.5Qxy~" type="var_block">
+<field name="NAME">led</field>
+</block>
+</value>
+<value name="RIGHT">
+<block id="rvOzrZlNR=gT(tjbI^/8" type="math_calc">
+<field name="OP">MULT</field>
+<value name="LEFT">
+<block id="dQkrym2QKGCnpb`}6i=W" type="dev_neopixel_step"/>
+</value>
+<value name="RIGHT">
+<block id="|5zGRknM3-j%}rs-1.Ph" type="var_block">
+<field name="NAME">schritt_laenge</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block id="ZRBoiGK#{8eiqQi!WW}P" type="var_assign">
+<data>rechnung</data>
+<value name="LEFT">
+<block id="8v__r[Vgq22`Y.=Hu^!c" type="var_block">
+<field name="NAME">intervall</field>
+</block>
+</value>
+<value name="RIGHT">
+<block id="p6RK8NF8LivByvsw:Exb" type="math_calc">
+<field name="OP">DIV</field>
+<value name="LEFT">
+<block id="pc;eYpH2dwrHNpMcil(}" type="var_block">
+<field name="NAME">pos</field>
+</block>
+</value>
+<value name="RIGHT">
+<block id="ds-EebC--3nm4Z]UM_ad" type="var_block">
+<field name="NAME">intervall_laenge</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block id="8gKG=aNiwCisvZ4r.bjz" type="var_assign">
+<data>rechnung</data>
+<value name="LEFT">
+<block id="[bSN|;_nb~+v8^ucsASg" type="var_block">
+<field name="NAME">farbe</field>
+</block>
+</value>
+<value name="RIGHT">
+<block id=";X;:]A;htlM4B2J[H4dG" type="math_calc">
+<field name="OP">MOD</field>
+<value name="LEFT">
+<block id="|LKR5X{~K+kLZ/Hgrj=t" type="var_block">
+<field name="NAME">intervall</field>
+</block>
+</value>
+<value name="RIGHT">
+<block id="(zE,d3;,A5jt-u),:kIn" type="math_number">
+<field name="VALUE">3</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block id="xsxrioTtp(p6:LsjQWJq" type="cond_if_else">
+<value name="CONDITION">
+<block id="QK1L5|X2/zJ:m{qa:k[7" type="logic_compare">
+<field name="OP">EQUALS</field>
+<value name="LEFT">
+<block id="lTKQuSlR._);4h11gH0Q" type="var_block">
+<field name="NAME">farbe</field>
+</block>
+</value>
+<value name="RIGHT">
+<block id="WB9D^@!.~#6r^VfF}t|h" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="STATEMENTS1">
+<block id="ovfZc3?5U.KAGQp.Yq.o" type="dev_neopixel_rgb">
+<value name="NUMBER">
+<block id="Q#1lb4XA|Kzf6UECM}R[" type="var_block">
+<field name="NAME">led</field>
+</block>
+</value>
+<value name="RED">
+<block id="X@s*[}d(8:rR(FyH|.-f" type="math_number">
+<field name="VALUE">255</field>
+</block>
+</value>
+<value name="GREEN">
+<block id="7bgpF~oHg.(Yxn(Vjk=k" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+<value name="BLUE">
+<block id="}h(qN9Kx?CGpb9NK14l/" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+</block>
+</statement>
+<statement name="STATEMENTS2">
+<block id="Kj8GY{Su[tp).GLD1fQM" type="cond_if_else">
+<value name="CONDITION">
+<block id="*,|qHQjUAWeUJyXday/I" type="logic_compare">
+<field name="OP">EQUALS</field>
+<value name="LEFT">
+<block id="hkX7E#yypc]!WY;V8|yQ" type="var_block">
+<field name="NAME">farbe</field>
+</block>
+</value>
+<value name="RIGHT">
+<block id="7+^s72^yC@`7F~cZSGY," type="math_number">
+<field name="VALUE">1</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="STATEMENTS1">
+<block id="}zpc,Of,U;r=O{4;||B8" type="dev_neopixel_rgb">
+<value name="NUMBER">
+<block id="l+J?`I^*r?1mVPQV8Rha" type="var_block">
+<field name="NAME">led</field>
+</block>
+</value>
+<value name="RED">
+<block id="e]U?F8D[N]RBXL(3uN3j" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+<value name="GREEN">
+<block id="4kHYj8Z.nd,~u2;unk`H" type="math_number">
+<field name="VALUE">255</field>
+</block>
+</value>
+<value name="BLUE">
+<block id="`0*pZ-^QdR7e`x%NNOCG" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+</block>
+</statement>
+<statement name="STATEMENTS2">
+<block id="C|u|HJAY5q*h,I2^zeU!" type="dev_neopixel_rgb">
+<value name="NUMBER">
+<block id="~vufWG=fE3GR[ahn^KDc" type="var_block">
+<field name="NAME">led</field>
+</block>
+</value>
+<value name="RED">
+<block id="k2cu_XgwzLWZ7;JIK]M6" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+<value name="GREEN">
+<block id="#8Nf9H37#t@I-w0X5Ou+" type="math_number">
+<field name="VALUE">0</field>
+</block>
+</value>
+<value name="BLUE">
+<block id="C,{n~,F=^2d@Cver:2+U" type="math_number">
+<field name="VALUE">255</field>
+</block>
+</value>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<description/>
+<options apply="no" protected="no">{option.usb=false,option.operations=false,option.use_double=false,option.colorDefault=false,option.i2c_slave=false,option.i2c_no=false,option.multArrays=false,option.devices=false,option.messages=false,option.localVars=false,option.linArrays=false,option.serial=false,option.interrupts=false,option.colorType=false,option.use_long=false,option.advanced=false,option.colorCategory=false,option.noArrays=false,option.i2c_master=false}</options>
+<task height="578" width="754">&lt;page&gt;
+&lt;h1&gt;Ein aufwändigeres Lauflicht&lt;/h1&gt;
+&lt;p&gt;
+  Dieses Lauflicht verwendet drei Farben. Dabei werden zeigen mehrere aufeinanderfolgende
+  LEDs immer dieselbe Farbe. In jedem Frame rücken die Intervalle eine gewisse Anzahl von LEDs
+  weiter.
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;em&gt;intervall_laenge&lt;/em&gt; ist die Anzahl von aufeinanderfolgenden LEDs mit derselben Farbe.
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;em&gt;schritt_laenge&lt;/em&gt; ist die Anzahl von LEDS, die die Intervalle weiterrücken.
+&lt;/p&gt;
+&lt;abbozza-hint block="rechnung" dx="300" dy="130" width="20em" height="4em"&gt;
+  Dieser Block berechnet die Farbe des Pixels. Experimentiere ruhig mit den Werten.
+&lt;/abbozza-hint&gt;
+&lt;p&gt;
+  Experimentiere mit den Farben und den Parametern herum.
+&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Was ändert sich, wenn &lt;em&gt;schritt_laenge&lt;/em&gt; auf 1 gesetzt wird?&lt;/li&gt;
+  &lt;li&gt;Was ändert sich, wenn &lt;em&gt;intervall_laenge&lt;/em&gt; auf 1 gesetzt wird?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;
+&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="Abbozza.uploadSketch()"&gt;Starte Dein Programm!
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;h3&gt;Mehr Beispiele&lt;/h3&gt;
+&lt;center&gt;
+&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="document.location.replace('?sketches/start.abz')"&gt;Zurück zum Anfang
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;center&gt;
+&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="document.location.replace('?sketches/regenbogen.abz')"&gt;Die Farben des Regenbogens
+&lt;/div&gt;
+&lt;/center&gt;
+
+&lt;/page&gt;</task>
+<system>arduino</system>
+</xml>
