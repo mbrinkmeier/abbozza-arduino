@@ -133,11 +133,11 @@
 &lt;/center&gt;
 &lt;h3&gt;Mehr Beispiele&lt;/h3&gt;
 &lt;center&gt;
-&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="document.location.replace('?sketches/start.abz')"&gt;Zurück zum Anfang
+&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="document.location.replace('?/sketches/start.abz')"&gt;Zurück zum Anfang
 &lt;/div&gt;
 &lt;/center&gt;
 &lt;center&gt;
-&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="document.location.replace('?sketches/lauflicht.abz')"&gt;Ein aufwändigeres Lauflicht
+&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="document.location.replace('?/sketches/lauflicht.abz')"&gt;Ein aufwändigeres Lauflicht
 &lt;/div&gt;
 &lt;/center&gt;
 &lt;/page&gt;
