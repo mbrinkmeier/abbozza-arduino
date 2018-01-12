@@ -1,0 +1,88 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+<block deletable="false" id="main" inline="false" type="main_temp" x="81" y="30">
+<field name="SPEED">100</field>
+<statement name="TEMPLATES">
+<block id="Tc8i}TS#Zg6`!RIxNNqX" type="mantel_pixel">
+<field name="COLOR">#FF0000</field>
+<field name="START">0</field>
+<next>
+<block id="pplO,:(ZPniodxUQv)2O" type="mantel_pixel_seq">
+<field name="START">0</field>
+<field name="REVERSE">TRUE</field>
+<statement name="COLORS">
+<block id="%,UVE:nl]02Y,8iEzRa5" type="mantel_farbe">
+<field name="COLOR">#0000FF</field>
+<next>
+<block id="f^!OIPqyk)@-JiyL[9Gk" type="mantel_farbe">
+<field name="COLOR">#00FF00</field>
+<next>
+<block id="M7c;]hTC[Isd5RdkbsL3" type="mantel_farbe">
+<field name="COLOR">#0000FF</field>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<description/>
+<options apply="yes" protected="no">{option.i2cs_slave=false,option.usb=true,option.serial=true,option.operations=false,option.i2c_master=false,option.advanced=true,option.multArrays=false,option.prog=false,option.testplugin.pluginoption=false,option.colors=true,option.i2cs_master=false,option.i2cs_no=false,option.use_long=false,option.interrupts=false,option.colorDefault=false,option.noArrays=true,option.linArrays=false,option.testplugin.enabled=false,option.testplugin.zeweite=false,option.i2c_no=true,option.i2c_slave=false,option.messages=false,option.templates=true,option.colorType=false,option.use_double=false,option.devices=true,option.localVars=false,option.abbozza-neopixel.enabled=false,option.colorCategory=false}</options>
+<task height="506" width="701">&lt;page&gt;
+  &lt;div style="margin: 0em 1em 2em"&gt;
+  &lt;h2&gt;Kombiniere verschiedene Vorlagen&lt;/h2&gt;
+  &lt;p&gt;
+    Hier kannst Du verschiedene Arten von Lauflichtern ausprobieren und miteinander kombinieren.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Unter &lt;b&gt;Vorlagen&lt;/b&gt; findest Du verschiedene Blöcke mit denen Du
+    &lt;/p&gt;&lt;ul&gt;
+      &lt;li&gt;ein einzelnes Pixel vor- oder rückwärts,&lt;/li&gt;
+      &lt;li&gt;eine Farbsequenz und&lt;/li&gt;
+      &lt;li&gt;einen Regenbogenequenz&lt;/li&gt;
+    &lt;/ul&gt;
+    laufen lassen kannst. Außerdem kannst Du alle Pixel in einer Farbe leuchten lassen.
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;
+    Du kannst die verschiedenen Möglichkeiten auch miteinander verbinden. Das Beispiel lässt
+    dabei ein einzelnes Pixel vorwärts laufen, während eine 3er-Sequenz rückwärts läuft.
+  &lt;/p&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="Abbozza.uploadSketch();"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Starte Dein Programm&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/sequenz.abz')"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Zurück zum ersten Experiment&lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/page&gt;
+&lt;page&gt;
+  &lt;div style="margin: 0em 1em 2em"&gt; 
+  &lt;h3&gt;Wenn Du mehr wissen willst ... &lt;/h3&gt;
+  &lt;p&gt;
+    Es gibt noch drei andere, kompliziertere Beispiele, die die Programmierung
+    etwas genauer zeigen:
+  &lt;/p&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/einfach.abz')"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Für Neugierige: Ein laufendes Pixel im Detail&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/regenboge.abz')"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Für Experten: Experimente mit dem Regenbogen&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/lauflicht.abz')"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Für Experten: Ein aufwändigers Lauflicht&lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/page&gt;</task>
+<system>arduino</system>
+</xml>

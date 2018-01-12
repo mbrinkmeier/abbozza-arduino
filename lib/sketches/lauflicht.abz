@@ -261,8 +261,9 @@
 </statement>
 </block>
 <description/>
-<options apply="no" protected="no">{option.usb=false,option.operations=false,option.use_double=false,option.colorDefault=false,option.i2c_slave=false,option.i2c_no=false,option.multArrays=false,option.devices=false,option.messages=false,option.localVars=false,option.linArrays=false,option.serial=false,option.interrupts=false,option.colorType=false,option.use_long=false,option.advanced=false,option.colorCategory=false,option.noArrays=false,option.i2c_master=false}</options>
-<task height="578" width="754">&lt;page&gt;
+<options apply="no" protected="no">{option.i2cs_slave=false,option.usb=true,option.serial=true,option.operations=false,option.i2c_master=false,option.advanced=true,option.multArrays=false,option.prog=false,option.testplugin.pluginoption=false,option.colors=true,option.i2cs_master=false,option.i2cs_no=false,option.use_long=false,option.interrupts=false,option.colorDefault=false,option.noArrays=true,option.linArrays=false,option.testplugin.enabled=false,option.testplugin.zeweite=false,option.i2c_no=true,option.i2c_slave=false,option.messages=false,option.templates=true,option.colorType=false,option.use_double=false,option.devices=true,option.localVars=false,option.abbozza-neopixel.enabled=false,option.colorCategory=false}</options>
+<task height="582" width="758">&lt;page&gt;
+&lt;div style="margin: 0em 1em 2em"&gt;
 &lt;h1&gt;Ein aufwändigeres Lauflicht&lt;/h1&gt;
 &lt;p&gt;
   Dieses Lauflicht verwendet drei Farben. Dabei werden zeigen mehrere aufeinanderfolgende
@@ -282,23 +283,46 @@
   Experimentiere mit den Farben und den Parametern herum.
 &lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Was ändert sich, wenn &lt;em&gt;schritt_laenge&lt;/em&gt; auf 1 gesetzt wird?&lt;/li&gt;
-  &lt;li&gt;Was ändert sich, wenn &lt;em&gt;intervall_laenge&lt;/em&gt; auf 1 gesetzt wird?&lt;/li&gt;
+  &lt;li&gt;Was ändert sich, wenn &lt;em&gt;schritt_laenge&lt;/em&gt; auf 10 gesetzt wird?&lt;/li&gt;
+  &lt;li&gt;Was ändert sich, wenn &lt;em&gt;intervall_laenge&lt;/em&gt; auf 10 gesetzt wird?&lt;/li&gt;
 &lt;/ul&gt;
+&lt;br&gt;&lt;br&gt;
 &lt;center&gt;
-&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="Abbozza.uploadSketch()"&gt;Starte Dein Programm!
-&lt;/div&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/sequenz.abz')"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Starte Dein Programm&lt;/h3&gt;
+    &lt;/div&gt;
 &lt;/center&gt;
-&lt;h3&gt;Mehr Beispiele&lt;/h3&gt;
-&lt;center&gt;
-&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="document.location.replace('?/sketches/start.abz')"&gt;Zurück zum Anfang
 &lt;/div&gt;
-&lt;/center&gt;
-&lt;center&gt;
-&lt;div style="margin: 5em; margin-top:2em; margin-bottom: 2em; box-shadow: 5px 5px lightgray; align: center; padding:10px; border: 1px black solid; border-radius: 5px; box-shadow: 5px gray" onclick="document.location.replace('?/sketches/regenbogen.abz')"&gt;Die Farben des Regenbogens
-&lt;/div&gt;
-&lt;/center&gt;
+&lt;/page&gt;
 
+&lt;page&gt;
+&lt;div style="margin: 0em 1em 2em"&gt;
+
+&lt;h3&gt;War Dir das noch nicht genug ... &lt;/h3&gt;
+&lt;center&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/einfach.abz')"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Für Neugierige: Ein Laufendes Pixel&lt;/h3&gt;
+    &lt;/div&gt;
+&lt;/center&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;center&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/lauflicht.abz')"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Für Experten: Ein aufwändigeres Lauflicht&lt;/h3&gt;
+    &lt;/div&gt;
+&lt;/center&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;center&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/sequenz.abz')"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Zurück zum Anfang&lt;/h3&gt;
+    &lt;/div&gt;
+&lt;/center&gt;
+&lt;/div&gt;
 &lt;/page&gt;</task>
 <system>arduino</system>
 </xml>

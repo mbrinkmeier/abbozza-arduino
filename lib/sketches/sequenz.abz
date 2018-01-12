@@ -1,0 +1,57 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+<block deletable="false" id="main" inline="false" type="main_seq" x="110" y="47">
+<field name="SPEED">100</field>
+<field name="REPEAT">TRUE</field>
+<field name="REVERSE">FALSE</field>
+<statement name="COLORS">
+<block deletable="false" id="dZk`*b7pfbg5vjIB:=9+" type="mantel_farbe">
+<field name="COLOR">#FF0000</field>
+<next>
+<block deletable="false" id="T1SnnhyhN:jSqjg=+hne" type="mantel_farbe">
+<field name="COLOR">#00FF00</field>
+<next>
+<block deletable="false" id="uw,:L?qgOj2QQ(Ya=fpJ" type="mantel_farbe">
+<field name="COLOR">#0000FF</field>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<description/>
+<options apply="yes" protected="yes">{option.i2cs_slave=false,option.usb=true,option.serial=true,option.operations=false,option.i2c_master=false,option.advanced=true,option.multArrays=false,option.prog=false,option.testplugin.pluginoption=false,option.colors=true,option.i2cs_master=false,option.i2cs_no=false,option.use_long=false,option.interrupts=false,option.colorDefault=false,option.noArrays=true,option.linArrays=false,option.testplugin.enabled=false,option.testplugin.zeweite=false,option.i2c_no=true,option.i2c_slave=false,option.messages=false,option.templates=false,option.colorType=false,option.use_double=false,option.devices=true,option.localVars=false,option.abbozza-neopixel.enabled=false,option.colorCategory=false}</options>
+<task height="488" width="830">&lt;page&gt;
+  &lt;div style="margin: 0em 1em 2em"&gt;
+  &lt;h2&gt;Programmiere Deine eigene Farbfolge&lt;/h2&gt;
+  &lt;p&gt;
+    Du kannst eine eigene Folge von Farben für das Lauflicht am Saum programmieren. Füge dazu
+    Blöcke, die Du unter &lt;b&gt;Farben&lt;/b&gt; findest zu der Reihenfolge hinzu. Du kannst auch die
+    Farben verändern, wenn Du drauf tippst.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Das Beispiel lässt ein rotes, ein grünes und ein blaues Pixel entlang des Saumes laufen.
+  &lt;/p&gt;
+  &lt;p&gt;
+     Mit der &lt;b&gt;Zeit zwischen den Schritten&lt;/b&gt; bestimmst Du, wieviele Millisekunden (1/1000 Sekunden)
+     zwischen zwei Schritten beim Lauflicht vergehen.
+  &lt;/p&gt;
+  &lt;p&gt;
+     Hast Du &lt;b&gt;Wiederholen&lt;/b&gt; ausgewählt, wird die Farbfolge immer wieder wiederholt.
+  &lt;/p&gt;
+  &lt;p&gt;
+     Hast Du &lt;b&gt;Rückwärts&lt;/b&gt; ausgewählt, läuft die Farbfolge rückwärts.
+  &lt;/p&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="Abbozza.uploadSketch();"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Starte Dein Programm&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/template.abz')"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Noch ein Experiment&lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/page&gt;</task>
+<system>arduino</system>
+</xml>
