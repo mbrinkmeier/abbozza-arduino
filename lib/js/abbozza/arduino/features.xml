@@ -3,6 +3,10 @@
     
     <!-- The basic features, w/o variables, operations, arrays ... -->
     <feature id="feat.BASE">
+        <category id="cat.FARBEN" name="Farben">
+        </category>
+        <category id="cat.TEMPLATES" name="Vorlagen">
+        </category>
     </feature>
 
     <feature id="feat.PROG" option="prog">
