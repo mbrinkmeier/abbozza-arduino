@@ -263,12 +263,13 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
         PrintStream newErr = new PrintStream(buffer);
         System.setErr(newErr);
-            
+        String buildResult = "";
+        
         // Compile sketch                
         try {            
             AbbozzaLogger.out(AbbozzaLocale.entry("msg.compiling"), AbbozzaLogger.INFO);
             editor.statusNotice("abbozza!: " + AbbozzaLocale.entry("msg.compiling"));
-            editor.getSketchController().build(false, false);
+            buildResult = editor.getSketchController().build(false, false);
             editor.statusNotice("abbozza!: " + AbbozzaLocale.entry("msg.done_compiling"));
             AbbozzaLogger.out(AbbozzaLocale.entry("msg.done_compiling"), AbbozzaLogger.INFO);
         } catch (Exception e) {
@@ -286,8 +287,12 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         // Fetch response
         String errMsg = buffer.toString();
         System.err.println(errMsg);
-                
-        return errMsg;
+
+        if ( buildResult == null ) {
+          return errMsg;
+        }
+        
+        return "";
     }
 
     @Override
@@ -354,9 +359,14 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
   
         // Fetch response
         String errMsg = buffer.toString();
+    
+        AbbozzaLogger.out("errMsg:",AbbozzaLogger.INFO);
         AbbozzaLogger.out(errMsg,AbbozzaLogger.INFO);
-                
-        return errMsg;
+                        
+        if ( errMsg.contains("error") || errMsg.contains("Error") ) {
+           return errMsg;
+        }
+        return "";
     }
 
     public boolean checkLibrary(String name) {

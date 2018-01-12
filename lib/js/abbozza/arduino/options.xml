@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <options>
     <group name="gui.blocks">
+        <item name="Farben" option="colors" default="true" />
+        <item name="Templates" option="templates" default="false" />
+        <item name="Programmierung" option="prog" default="false"/>
         <item name="gui.advanced" option="advanced" default="true"/>
         <item name="gui.operations" option="operations" default="true">
             <item name="gui.local_variables" option="localVars" default="true"/>

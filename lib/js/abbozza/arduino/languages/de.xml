@@ -2,4 +2,8 @@
 <language id="de">
     <msg id="msg.ARDUINO">Arduino</msg>
     <msg id="cat.LEDs">LEDs</msg>
+    <categories>
+      <msg id="cat.FARBEN">Farben</msg>
+      <msg id="cat.TEMPLATES">Vorlagen</msg>
+    </categories>
 </language>    
