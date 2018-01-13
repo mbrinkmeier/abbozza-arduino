@@ -128,12 +128,19 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         
         super.init("arduino");
         
-        if ( config.startAutomatically() ) {
+        String browserOpts = config.getProperty("browserOptions");
+        if ( browserOpts == null ) browserOpts = "";
+        if ( !browserOpts.contains("--kiosk") ) browserOpts += " --kiosk";
+        config.setProperty("browserOptions",browserOpts);
+        
+        // if ( config.startAutomatically() ) {
             startServer();
-            if ( config.startBrowser() ) {
+            // if ( config.startBrowser() ) {
                 startBrowser("arduino.html");
-            }
-        }
+            // }
+        // }
+        this.editor.setExtendedState(JFrame.ICONIFIED);
+        this.editor.setVisible(false);
     }
 
     
@@ -151,6 +158,9 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
 
         startServer();
         startBrowser("arduino.html");
+
+        this.editor.setExtendedState(JFrame.ICONIFIED);
+        this.editor.setVisible(false);
     }
 
     @Override

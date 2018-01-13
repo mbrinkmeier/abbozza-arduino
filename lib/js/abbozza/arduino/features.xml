@@ -3,6 +3,32 @@
     
     <!-- The basic features, w/o variables, operations, arrays ... -->
     <feature id="feat.BASE">
+        <category id="cat.FARBEN" name="Farben">
+          <block type="mantel_farbe">
+              <field name="COLOR">#FF0000</field>
+          </block>
+          <block type="mantel_farbe">
+              <field name="COLOR">#00FF00</field>
+          </block>
+          <block type="mantel_farbe">
+              <field name="COLOR">#0000FF</field>
+          </block>
+          <block type="mantel_farbe">
+              <field name="COLOR">#FF00FF</field>
+          </block>
+          <block type="mantel_farbe">
+              <field name="COLOR">#FFFF00</field>
+          </block>
+          <block type="mantel_farbe">
+              <field name="COLOR">#00FFFF</field>
+          </block>
+          <block type="mantel_farbe">
+              <field name="COLOR">#FFFFFF</field>
+          </block>
+          <block type="mantel_farbe">
+              <field name="COLOR">#000000</field>
+          </block>
+        </category>
     </feature>
 
     <feature id="feat.PROG" option="prog">
@@ -157,30 +183,6 @@
         
     <feature id="feat.FARBEN" option="colors">
         <category id="cat.FARBEN" name="Farben">
-          <block type="mantel_farbe">
-              <field name="COLOR">#FF0000</field>
-          </block>
-          <block type="mantel_farbe">
-              <field name="COLOR">#00FF00</field>
-          </block>
-          <block type="mantel_farbe">
-              <field name="COLOR">#0000FF</field>
-          </block>
-          <block type="mantel_farbe">
-              <field name="COLOR">#FF00FF</field>
-          </block>
-          <block type="mantel_farbe">
-              <field name="COLOR">#FFFF00</field>
-          </block>
-          <block type="mantel_farbe">
-              <field name="COLOR">#00FFFF</field>
-          </block>
-          <block type="mantel_farbe">
-              <field name="COLOR">#FFFFFF</field>
-          </block>
-          <block type="mantel_farbe">
-              <field name="COLOR">#000000</field>
-          </block>
         </category>
     </feature>
                    
