@@ -136,7 +136,7 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         // if ( config.startAutomatically() ) {
             startServer();
             // if ( config.startBrowser() ) {
-                // startBrowser("arduino.html");
+                startBrowser("arduino.html");
             // }
         // }
         this.editor.setExtendedState(JFrame.ICONIFIED);
