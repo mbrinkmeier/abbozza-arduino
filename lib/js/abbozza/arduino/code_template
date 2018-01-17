@@ -26,9 +26,9 @@ HiTechStrip* strip = new HiTechStrip();
 ###inithook###
 
 void setup() {
-  strip->mantel->pixel.begin();
-  strip->mantel->pixel.setPixelColor(0,0,0,0);
-  strip->mantel->pixel.show();  
+  // strip->mantel->pixel.begin();
+  // strip->mantel->pixel.setPixelColor(0,0,0,0);
+  // strip->mantel->pixel.show();  
   strip->setup();
 }
 
