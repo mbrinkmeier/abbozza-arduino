@@ -90,7 +90,7 @@
 </block>
 <description/>
 <options apply="no" protected="no">{option.i2cs_slave=false,option.usb=true,option.serial=true,option.operations=false,option.i2c_master=false,option.advanced=true,option.multArrays=false,option.prog=false,option.testplugin.pluginoption=false,option.colors=true,option.i2cs_master=false,option.i2cs_no=false,option.use_long=false,option.interrupts=false,option.colorDefault=false,option.noArrays=true,option.linArrays=false,option.testplugin.enabled=false,option.testplugin.zeweite=false,option.i2c_no=true,option.i2c_slave=false,option.messages=false,option.templates=true,option.colorType=false,option.use_double=false,option.devices=true,option.localVars=false,option.abbozza-neopixel.enabled=false,option.colorCategory=false}</options>
-<task height="569" width="747">&lt;page&gt;
+<task height="569" width="500">&lt;page&gt;
 &lt;div style="margin: 0em 1em 2em"&gt;
 &lt;h1&gt;Die Farben des Regenbogens&lt;/h1&gt;
 &lt;p&gt;
@@ -102,7 +102,7 @@
   Position als Winkel in einem Kreis an, da sich der Farbverlauf am Ende wieder schließt.
 &lt;/p&gt;
 &lt;center&gt;
-&lt;img src="sketches/img/Regenbogen.png"&gt;
+&lt;img src="sketches/img/Regenbogen.png" alt="Bildquelle: Wikipedia.de"&gt;
 &lt;/center&gt;
 &lt;p&gt;
   Für die Rot-, Grün- und Blauanteile stehen drei Blöcke zu Verfügung.
@@ -141,14 +141,14 @@
 &lt;center&gt;
     &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/einfach.abz')"&gt;
-       &lt;h3 style="color: black; vertical-align:middle"&gt;Für Neugierige: Ein Laufendes Pixel&lt;/h3&gt;
+       &lt;h3 style="margin: 0.5em; color: black; vertical-align:middle"&gt;Für Neugierige:&lt;br/&gt;Ein Laufendes Pixel&lt;/h3&gt;
     &lt;/div&gt;
 &lt;/center&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;center&gt;
     &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/lauflicht.abz')"&gt;
-       &lt;h3 style="color: black; vertical-align:middle"&gt;Für Experten: Ein aufwändigeres Lauflicht&lt;/h3&gt;
+       &lt;h3 style="margin: 0.5em; color: black; vertical-align:middle"&gt;Für Experten:&lt;br/&gt;Ein aufwändigeres Lauflicht&lt;/h3&gt;
     &lt;/div&gt;
 &lt;/center&gt;
 &lt;br&gt;&lt;br&gt;

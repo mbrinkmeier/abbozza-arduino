@@ -30,9 +30,9 @@
 </statement>
 </block>
 <description/>
-<options apply="yes" protected="no">{option.i2cs_slave=false,option.usb=true,option.serial=true,option.operations=false,option.i2c_master=false,option.advanced=true,option.multArrays=false,option.prog=false,option.testplugin.pluginoption=false,option.colors=true,option.i2cs_master=false,option.i2cs_no=false,option.use_long=false,option.interrupts=false,option.colorDefault=false,option.noArrays=true,option.linArrays=false,option.testplugin.enabled=false,option.testplugin.zeweite=false,option.i2c_no=true,option.i2c_slave=false,option.messages=false,option.templates=true,option.colorType=false,option.use_double=false,option.devices=true,option.localVars=false,option.abbozza-neopixel.enabled=false,option.colorCategory=false}</options>
-<task height="506" width="701">&lt;page&gt;
-  &lt;div style="margin: 0em 1em 2em"&gt;
+<options apply="yes" protected="no">{option.i2cs_slave=false,option.usb=true,option.serial=true,option.operations=false,option.i2c_master=false,option.advanced=true,option.multArrays=false,option.prog=false,option.testplugin.pluginoption=false,option.colors=true,option.i2cs_master=false,option.i2cs_no=false,option.use_long=false,option.interrupts=false,option.colorDefault=false,option.noArrays=true,option.linArrays=false,option.testplugin.enabled=false,option.testplugin.zeweite=false,option.i2c_no=true,option.i2c_slave=false,option.messages=false,option.templates=true,option.colorType=false,option.devices=true,option.use_double=false,option.localVars=false,option.abbozza-neopixel.enabled=false,option.colorCategory=false}</options>
+<task height="600" width="801">&lt;page&gt;
+  &lt;div style="margin: 0em 1em 2em;"&gt;
   &lt;h2&gt;Kombiniere verschiedene Vorlagen&lt;/h2&gt;
   &lt;p&gt;
     Hier kannst Du verschiedene Arten von Lauflichtern ausprobieren und miteinander kombinieren.
@@ -42,7 +42,7 @@
     &lt;/p&gt;&lt;ul&gt;
       &lt;li&gt;ein einzelnes Pixel vor- oder rückwärts,&lt;/li&gt;
       &lt;li&gt;eine Farbsequenz und&lt;/li&gt;
-      &lt;li&gt;einen Regenbogenequenz&lt;/li&gt;
+      &lt;li&gt;eine Regenbogensequenz&lt;/li&gt;
     &lt;/ul&gt;
     laufen lassen kannst. Außerdem kannst Du alle Pixel in einer Farbe leuchten lassen.
   &lt;p&gt;&lt;/p&gt;
@@ -62,10 +62,10 @@
   &lt;/div&gt;
 &lt;/page&gt;
 &lt;page&gt;
-  &lt;div style="margin: 0em 1em 2em"&gt; 
+  &lt;div style="margin: 0em 1em 2em;"&gt; 
   &lt;h3&gt;Wenn Du mehr wissen willst ... &lt;/h3&gt;
   &lt;p&gt;
-    Es gibt noch drei andere, kompliziertere Beispiele, die die Programmierung
+    Es gibt noch drei andere Beispiele, die die Programmierung
     etwas genauer zeigen:
   &lt;/p&gt;
     &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
@@ -80,7 +80,7 @@
     &lt;br&gt;&lt;br&gt;
     &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/lauflicht.abz')"&gt;
-       &lt;h3 style="color: black; vertical-align:middle"&gt;Für Experten: Ein aufwändigers Lauflicht&lt;/h3&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Für Experten: Ein aufwändigeres Lauflicht&lt;/h3&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/page&gt;</task>

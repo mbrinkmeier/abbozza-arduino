@@ -85,7 +85,7 @@
 </block>
 <description/>
 <options apply="no" protected="no">{option.i2cs_slave=false,option.usb=true,option.serial=true,option.operations=false,option.i2c_master=false,option.advanced=true,option.multArrays=false,option.prog=false,option.testplugin.pluginoption=false,option.colors=true,option.i2cs_master=false,option.i2cs_no=false,option.use_long=false,option.interrupts=false,option.colorDefault=false,option.noArrays=true,option.linArrays=false,option.testplugin.enabled=false,option.testplugin.zeweite=false,option.i2c_no=true,option.i2c_slave=false,option.messages=false,option.templates=true,option.colorType=false,option.use_double=false,option.devices=true,option.localVars=false,option.abbozza-neopixel.enabled=false,option.colorCategory=false}</options>
-<task height="573" width="751">&lt;page&gt;
+<task height="573" width="500">&lt;page&gt;
 &lt;div style="margin: 0em 1em 4em"&gt;
 &lt;h1&gt;Programmiere Dein eigenes Lauflicht!&lt;/h1&gt;
 &lt;p&gt;
@@ -93,14 +93,14 @@
   schnell aufeinanderfolgende einzelne Bilder gezeigt. Dadurch sieht es aus, als
   würden sich die Farben bewegen. Die einzelnen Bilder werden &lt;b&gt;Frames&lt;/b&gt; genannt.
 &lt;/p&gt;
-&lt;img width="75px" src="sketches/img/animation1.png"&gt;
-&lt;img width="75px" src="sketches/img/animation2.png"&gt;
-&lt;img width="75px" src="sketches/img/animation3.png"&gt;
-&lt;img width="75px" src="sketches/img/animation4.png"&gt;
-&lt;img width="75px" src="sketches/img/animation5.png"&gt;
-&lt;img width="75px" src="sketches/img/animation6.png"&gt;
-&lt;img width="75px" src="sketches/img/animation7.png"&gt;
-&lt;img width="75px" src="sketches/img/animation.gif"&gt;
+&lt;img width="50px" src="sketches/img/animation1.png"&gt;
+&lt;img width="50px" src="sketches/img/animation2.png"&gt;
+&lt;img width="50px" src="sketches/img/animation3.png"&gt;
+&lt;img width="50px" src="sketches/img/animation4.png"&gt;
+&lt;img width="50px" src="sketches/img/animation5.png"&gt;
+&lt;img width="50px" src="sketches/img/animation6.png"&gt;
+&lt;img width="50px" src="sketches/img/animation7.png"&gt;
+&lt;img width="50px" src="sketches/img/animation.gif"&gt;
 &lt;p&gt;
   Das Programm links lässt ein rotes &lt;b&gt;Pixel&lt;/b&gt; entlang des LED-Streifens am Saum wandern.
 &lt;/p&gt;
@@ -158,14 +158,14 @@ Nummer 122 = 126-4).
 &lt;center&gt;
     &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/regenbogen.abz')"&gt;
-       &lt;h3 style="color: black; vertical-align:middle"&gt;Für Experten: Experimente mit dem Regenbogen&lt;/h3&gt;
+       &lt;h3 style="margin: 0.5em; color: black; vertical-align:middle"&gt;Für Experten:&lt;br/&gt;Experimente mit dem Regenbogen&lt;/h3&gt;
     &lt;/div&gt;
 &lt;/center&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;center&gt;
     &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/lauflicht.abz')"&gt;
-       &lt;h3 style="color: black; vertical-align:middle"&gt;Für Experten: Ein aufwändigeres Lauflicht&lt;/h3&gt;
+       &lt;h3 style="margin: 0.5em; color: black; vertical-align:middle"&gt;Für Experten:&lt;br/&gt;Ein aufwändigeres Lauflicht&lt;/h3&gt;
     &lt;/div&gt;
 &lt;/center&gt;
 &lt;br&gt;&lt;br&gt;
