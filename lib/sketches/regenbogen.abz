@@ -112,7 +112,7 @@
 &lt;/p&gt;
 &lt;h3&gt;Ein Lauflicht ohne Bewegung&lt;/h3&gt;
 &lt;p&gt;
-  Das Beispielprogramm lässt jede LED in einer der Farben des Verlaus leuchten. Allerdings bewegt 
+  Das Beispielprogramm lässt jede LED in einer der Farben des Verlaus leuchten. Allerdings bewegt
   sich nichts.
 &lt;/p&gt;
 &lt;p&gt;
@@ -127,7 +127,7 @@
   Dieser Block könnte hilfreich sein (auch mehrmals).
 &lt;/abbozza-hint&gt;
 &lt;center&gt;
-    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="Abbozza.uploadSketch()"&gt;
        &lt;h3 style="color: black; vertical-align:middle"&gt;Starte Dein Programm&lt;/h3&gt;
     &lt;/div&gt;
@@ -139,14 +139,14 @@
 
 &lt;h3&gt;War Dir das noch nicht genug ... &lt;/h3&gt;
 &lt;center&gt;
-    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/einfach.abz')"&gt;
        &lt;h3 style="margin: 0.5em; color: black; vertical-align:middle"&gt;Für Neugierige:&lt;br/&gt;Ein Laufendes Pixel&lt;/h3&gt;
     &lt;/div&gt;
 &lt;/center&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;center&gt;
-    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/lauflicht.abz')"&gt;
        &lt;h3 style="margin: 0.5em; color: black; vertical-align:middle"&gt;Für Experten:&lt;br/&gt;Ein aufwändigeres Lauflicht&lt;/h3&gt;
     &lt;/div&gt;
@@ -155,11 +155,16 @@
 &lt;br&gt;
 &lt;br&gt;
 &lt;center&gt;
-    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/sequenz.abz')"&gt;
-       &lt;h3 style="color: black; vertical-align:middle"&gt;Zurück zum Anfang&lt;/h3&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Zurück zum ersten Experiment&lt;/h3&gt;
     &lt;/div&gt;
 &lt;/center&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
+     border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="Abbozza.goHome()"&gt;
+   &lt;h3 style="color: black; vertical-align:middle"&gt;Zurück zum Start&lt;/h3&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/page&gt;</task>
 <system>arduino</system>

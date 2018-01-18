@@ -50,35 +50,40 @@
     Du kannst die verschiedenen Möglichkeiten auch miteinander verbinden. Das Beispiel lässt
     dabei ein einzelnes Pixel vorwärts laufen, während eine 3er-Sequenz rückwärts läuft.
   &lt;/p&gt;
-    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="Abbozza.uploadSketch();"&gt;
        &lt;h3 style="color: black; vertical-align:middle"&gt;Starte Dein Programm&lt;/h3&gt;
     &lt;/div&gt;
     &lt;br&gt;&lt;br&gt;
-    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/sequenz.abz')"&gt;
        &lt;h3 style="color: black; vertical-align:middle"&gt;Zurück zum ersten Experiment&lt;/h3&gt;
     &lt;/div&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="Abbozza.goHome()"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Zurück zum Start&lt;/h3&gt;
+    &lt;/div&gt;    
   &lt;/div&gt;
 &lt;/page&gt;
 &lt;page&gt;
-  &lt;div style="margin: 0em 1em 2em;"&gt; 
+  &lt;div style="margin: 0em 1em 2em;"&gt;
   &lt;h3&gt;Wenn Du mehr wissen willst ... &lt;/h3&gt;
   &lt;p&gt;
     Es gibt noch drei andere Beispiele, die die Programmierung
     etwas genauer zeigen:
   &lt;/p&gt;
-    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/einfach.abz')"&gt;
        &lt;h3 style="color: black; vertical-align:middle"&gt;Für Neugierige: Ein laufendes Pixel im Detail&lt;/h3&gt;
     &lt;/div&gt;
     &lt;br&gt;&lt;br&gt;
-    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/regenboge.abz')"&gt;
        &lt;h3 style="color: black; vertical-align:middle"&gt;Für Experten: Experimente mit dem Regenbogen&lt;/h3&gt;
     &lt;/div&gt;
     &lt;br&gt;&lt;br&gt;
-    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/lauflicht.abz')"&gt;
        &lt;h3 style="color: black; vertical-align:middle"&gt;Für Experten: Ein aufwändigeres Lauflicht&lt;/h3&gt;
     &lt;/div&gt;

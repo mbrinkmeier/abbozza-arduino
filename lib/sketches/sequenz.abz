@@ -21,7 +21,7 @@
 </block>
 <description/>
 <options apply="yes" protected="yes">{option.i2cs_slave=false,option.usb=true,option.serial=true,option.operations=false,option.i2c_master=false,option.advanced=true,option.multArrays=false,option.prog=false,option.testplugin.pluginoption=false,option.colors=true,option.i2cs_master=false,option.i2cs_no=false,option.use_long=false,option.interrupts=false,option.colorDefault=false,option.noArrays=true,option.linArrays=false,option.testplugin.enabled=false,option.testplugin.zeweite=false,option.i2c_no=true,option.i2c_slave=false,option.messages=false,option.templates=false,option.colorType=false,option.use_double=false,option.devices=true,option.localVars=false,option.abbozza-neopixel.enabled=false,option.colorCategory=false}</options>
-<task height="500" width="802">&lt;page&gt;
+<task height="600" width="802">&lt;page&gt;
   &lt;div style="margin: 0em 1em 2em;"&gt;
   &lt;h2&gt;Programmiere Deine eigene Farbfolge&lt;/h2&gt;
   &lt;p&gt;
@@ -42,14 +42,19 @@
   &lt;p&gt;
      Hast Du &lt;b&gt;Rückwärts&lt;/b&gt; ausgewählt, läuft die Farbfolge rückwärts.
   &lt;/p&gt;
-    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="Abbozza.uploadSketch();"&gt;
        &lt;h3 style="color: black; vertical-align:middle"&gt;Starte Dein Programm&lt;/h3&gt;
     &lt;/div&gt;
     &lt;br&gt;&lt;br&gt;
-    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em; 
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
          border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="window.location.replace('?/sketches/template.abz')"&gt;
        &lt;h3 style="color: black; vertical-align:middle"&gt;Noch ein Experiment&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;div style="margin: auto; text-align: center; width: 80%; height: 4em;
+         border: 2pt solid black; border-radius: 1em; background-color: lightgray;" onclick="Abbozza.goHome()"&gt;
+       &lt;h3 style="color: black; vertical-align:middle"&gt;Zurück zum Start&lt;/h3&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/page&gt;</task>

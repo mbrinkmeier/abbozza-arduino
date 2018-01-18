@@ -132,12 +132,14 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         if ( browserOpts == null ) browserOpts = "";
         if ( !browserOpts.contains("--kiosk") ) browserOpts += " --kiosk";
         config.setProperty("browserOptions",browserOpts);
-        
+        config.setBrowserStart(false);
+        config.setAutoStart(true);
+
         // if ( config.startAutomatically() ) {
             startServer();
-            // if ( config.startBrowser() ) {
+            if ( config.startBrowser() ) {
                 startBrowser("arduino.html");
-            // }
+            }
         // }
         this.editor.setExtendedState(JFrame.ICONIFIED);
         this.editor.setVisible(false);
