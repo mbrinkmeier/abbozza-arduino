@@ -55,6 +55,12 @@ import processing.app.packages.UserLibrary;
 
 public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
 
+    public static final int SYS_MAJOR = 0;
+    public static final int SYS_MINOR = 11;
+    public static final int SYS_HOTFIX = 0;
+    public static final String SYS_REMARK = "(arduino)";
+    
+    
     public static Color COLOR = new Color(91, 103, 165);
     private static int counter;
 
@@ -71,7 +77,7 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
     public static String name;
     
     // During class load check is this calss is loaded from the global tool jar
-    static {
+    static {        
         isGlobal = true;
         localExists = false;
         jarUri = null;
@@ -103,7 +109,7 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         if ( jarUri == null ) {
             System.out.println("abbozza! in panic! Cannot find abbozza-arduino.jar!");
             System.exit(1);
-        }        
+        }
     }
     
     
@@ -408,5 +414,10 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
     public File queryPathToBoard(String path) {
         return new File(path);
     }
+    
+    public static String getSystemVersion() {
+        return SYS_MAJOR + "." + SYS_MINOR + "." + SYS_HOTFIX + " " + SYS_REMARK;
+    };
+
 }
 
