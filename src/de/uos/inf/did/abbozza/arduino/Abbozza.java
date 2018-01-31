@@ -56,10 +56,11 @@ import processing.app.packages.UserLibrary;
 public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
 
     public static final int SYS_MAJOR = 0;
-    public static final int SYS_MINOR = 11;
+    public static final int SYS_MINOR= 11;
+    public static final int SYS_REV = 0;
     public static final int SYS_HOTFIX = 0;
-    public static final String SYS_REMARK = "(arduino)";
-    
+    public static final String SYS_REMARK = "(ScienceTruckMantel)";
+    public static final String SYS_VERSION = SYS_MAJOR + "." + SYS_MINOR + "." + SYS_REV + "." + SYS_HOTFIX + " " + SYS_REMARK;
     
     public static Color COLOR = new Color(91, 103, 165);
     private static int counter;
@@ -272,7 +273,12 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
 
     
     @Override
-    public String compileCode(String code) {
+    public int compileCode(String code) {
+        
+        compileMsg = "";
+        compileErrorMsg = "";
+        
+        String result = null;
         
         toolSetCode(code);        
 
@@ -281,13 +287,12 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
         PrintStream newErr = new PrintStream(buffer);
         System.setErr(newErr);
-        String buildResult = "";
         
         // Compile sketch                
         try {            
             AbbozzaLogger.out(AbbozzaLocale.entry("msg.compiling"), AbbozzaLogger.INFO);
             editor.statusNotice("abbozza!: " + AbbozzaLocale.entry("msg.compiling"));
-            buildResult = editor.getSketchController().build(false, false);
+            result = editor.getSketchController().build(false, false);
             editor.statusNotice("abbozza!: " + AbbozzaLocale.entry("msg.done_compiling"));
             AbbozzaLogger.out(AbbozzaLocale.entry("msg.done_compiling"), AbbozzaLogger.INFO);
         } catch (Exception e) {
@@ -303,18 +308,17 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         System.setErr(origErr);
   
         // Fetch response
-        String errMsg = buffer.toString();
-        System.err.println(errMsg);
+        compileErrorMsg = buffer.toString();
 
-        if ( buildResult == null ) {
-          return errMsg;
+        if ( result != null ) {
+            return 0;
+        } else {
+            return 1;
         }
-        
-        return "";
     }
 
     @Override
-    public String uploadCode(String code) {
+    public int uploadCode(String code) {
 
         boolean flag = PreferencesData.getBoolean("editor.save_on_verify");
         PreferencesData.setBoolean("editor.save_on_verify", false);
@@ -376,16 +380,15 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         System.setErr(origErr);
   
         // Fetch response
-        String errMsg = buffer.toString();
+        compileErrorMsg = buffer.toString();
+        AbbozzaLogger.out(compileErrorMsg,AbbozzaLogger.INFO);
     
-        AbbozzaLogger.out("errMsg:",AbbozzaLogger.INFO);
-        AbbozzaLogger.out(errMsg,AbbozzaLogger.INFO);
-                        
-        if ( errMsg.contains("error") || errMsg.contains("Error") ) {
-           return errMsg;
+        if ( compileErrorMsg.contains("error") ) {
+            return 1;
         }
-        return "";
-    }
+        return 0;
+                        
+        }
 
     public boolean checkLibrary(String name) {
         UserLibrary lib = Base.getLibraries().getByName(name);
@@ -415,9 +418,10 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         return new File(path);
     }
     
-    public static String getSystemVersion() {
-        return SYS_MAJOR + "." + SYS_MINOR + "." + SYS_HOTFIX + " " + SYS_REMARK;
+    public String getSystemVersion() {
+        return SYS_VERSION;
     };
+
 
 }
 
