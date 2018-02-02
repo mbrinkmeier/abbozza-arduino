@@ -57,6 +57,7 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
 
     public static final int SYS_MAJOR = 0;
     public static final int SYS_MINOR = 11;
+    public static final int SYS_MINOR= 11;
     public static final int SYS_REV = 0;
     public static final int SYS_HOTFIX = 0;
     public static final String SYS_REMARK = "(ScienceTruckMantel)";
