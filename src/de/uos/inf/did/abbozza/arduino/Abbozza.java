@@ -31,10 +31,10 @@ import processing.app.PreferencesData;
 import processing.app.tools.Tool;
 
 import com.sun.net.httpserver.*;
-import de.uos.inf.did.abbozza.AbbozzaConfigDialog;
-import de.uos.inf.did.abbozza.AbbozzaLocale;
-import de.uos.inf.did.abbozza.AbbozzaLogger;
-import de.uos.inf.did.abbozza.AbbozzaServer;
+import de.uos.inf.did.abbozza.core.AbbozzaConfigDialog;
+import de.uos.inf.did.abbozza.core.AbbozzaLocale;
+import de.uos.inf.did.abbozza.core.AbbozzaLogger;
+import de.uos.inf.did.abbozza.core.AbbozzaServer;
 import de.uos.inf.did.abbozza.arduino.handler.BoardHandler;
 import de.uos.inf.did.abbozza.handler.SerialHandler;
 import de.uos.inf.did.abbozza.plugin.PluginConfigPanel;

@@ -5,8 +5,8 @@
  */
 package de.uos.inf.did.abbozza.arduino;
 
-import de.uos.inf.did.abbozza.AbbozzaLocale;
-import de.uos.inf.did.abbozza.AbbozzaLogger;
+import de.uos.inf.did.abbozza.core.AbbozzaLocale;
+import de.uos.inf.did.abbozza.core.AbbozzaLogger;
 import de.uos.inf.did.abbozza.install.InstallTool;
 import de.uos.inf.did.abbozza.tools.GUITool;
 import java.awt.Dimension;
