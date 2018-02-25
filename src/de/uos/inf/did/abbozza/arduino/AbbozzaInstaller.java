@@ -11,11 +11,13 @@ import de.uos.inf.did.abbozza.install.InstallTool;
 import de.uos.inf.did.abbozza.tools.GUITool;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.nio.charset.Charset;
 import java.nio.file.AccessDeniedException;
 import java.nio.file.FileAlreadyExistsException;
@@ -140,7 +142,7 @@ public class AbbozzaInstaller extends javax.swing.JFrame {
         String osName = installTool.getSystem();
         String userDir = installTool.getUserDir();
         String prefName = userDir;
-
+                
         if (osName.equals("Linux")) {
             sketchbookDir = prefName + "/Arduino/";
             prefName = prefName + "/.arduino15/preferences.txt";
@@ -162,14 +164,28 @@ public class AbbozzaInstaller extends javax.swing.JFrame {
             FileInputStream is = new FileInputStream(file);
 
             InputStreamReader r = new InputStreamReader(is, Charset.forName("UTF-8"));
-            prefs.load(r);
+            
+            if ( osName.equals("Win") ) {
+              // Under windows replace backslashes in the properties file
+              BufferedReader propReader = new BufferedReader(r);
+              String propString = "";
+              while (propReader.ready()) {
+                  String line = propReader.readLine();
+                  line = line.replace("\\","/");
+                  propString = propString + line + "\n";
+              }
+              prefs.load(new StringReader(propString));
+            } else {
+              prefs.load(r);
+            }
         } catch (IOException e) {
             return null;
         } catch (IllegalArgumentException ex) {
         }
 
         if ((prefs != null) && (prefs.getProperty("sketchbook.path") != null)) {
-            sketchbookDir = (new File(prefs.getProperty("sketchbook.path"))).getAbsolutePath();
+            String path = prefs.getProperty("sketchbook.path");
+            sketchbookDir = (new File(path)).getAbsolutePath();
         }
 
         return prefs;
