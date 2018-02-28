@@ -63,8 +63,8 @@ import processing.app.packages.UserLibrary;
 
 public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
 
-    public static final int SYS_MAJOR = 0;
-    public static final int SYS_MINOR = 12;
+    public static final int SYS_MAJOR = 1;
+    public static final int SYS_MINOR = 0;
     public static final int SYS_REV = 0;
     public static final int SYS_HOTFIX = 0;
     public static final String SYS_REMARK = "(arduino)";
@@ -199,7 +199,7 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         // jarHandler.addJar(sketchbookPath + "/tools/Abbozza/tool/abbozza-arduino.jar", "Local jar");
         jarHandler.addDir(abbozzaPath + "tools/Abbozza", "Global directory");
         // jarHandler.addJar(runtimePath + "tools/Abbozza/tool/abbozza-arduino.jar", "Global jar");
-        jarHandler.addJar(jarUri, "Jar");
+        jarHandler.addJar(jarUri, "Jar");        
     }
 
     public void adaptConfigDialog(AbbozzaConfigDialog dialog) {
