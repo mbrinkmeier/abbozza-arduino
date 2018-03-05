@@ -36,6 +36,7 @@ import de.uos.inf.did.abbozza.core.AbbozzaLogger;
 import de.uos.inf.did.abbozza.core.AbbozzaServer;
 import de.uos.inf.did.abbozza.arduino.handler.BoardHandler;
 import de.uos.inf.did.abbozza.handler.SerialHandler;
+import de.uos.inf.did.abbozza.install.InstallTool;
 import de.uos.inf.did.abbozza.plugin.PluginConfigPanel;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -170,9 +171,10 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         super.setPaths();
 
         sketchbookPath = PreferencesData.get("sketchbook.path");
-        if (sketchbookPath.contains("%HOME%")) {
-            sketchbookPath = sketchbookPath.replace("%HOME%", System.getProperty("user.home"));
-        }
+        sketchbookPath = InstallTool.expandPath(sketchbookPath);
+        // if (sketchbookPath.contains("%HOME%")) {
+        //     sketchbookPath = sketchbookPath.replace("%HOME%", System.getProperty("user.home"));
+        // }
         // configPath = sketchbookPath + "/tools/Abbozza/Abbozza.cfg";
         localJarPath = sketchbookPath + "/tools/Abbozza/tool/";
         globalJarPath = PreferencesData.get("runtime.ide.path") + "/";
