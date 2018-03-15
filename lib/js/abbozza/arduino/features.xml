@@ -90,9 +90,39 @@
                 
         <!-- Simple string operations -->
         <category id="cat.TEXT">
-            <block type="text_const"></block>
-            <block type="text_length"></block>
-            <block type="text_concat"></block>
+            <block type="text_const">
+                <field name="CONTENT">Hallo!</field>                
+            </block>
+            <block type="text_length">
+                <value name="TEXT">
+                    <block type="text_const">
+                        <mutation confirmed="false"/>
+                        <field name="CONTENT">Hallo!</field>
+                    </block>
+                </value>
+            </block>
+            <block type="text_is_empty">
+                <value name="TEXT">
+                    <block type="text_const">
+                        <mutation confirmed="false"/>
+                        <field name="VALUE">Hallo!</field>
+                    </block>
+                </value>                
+            </block>
+            <block type="text_concat">
+                <value name="TEXT1">
+                    <block type="text_const">
+                        <mutation confirmed="false"/>
+                        <field name="CONTENT">Hallo!</field>
+                    </block>
+                </value>
+                <value name="TEXT2">
+                    <block type="text_const">
+                        <mutation confirmed="false"/>
+                        <field name="CONTENT">Hallo!</field>
+                    </block>
+                </value>                
+            </block>
         </category>
         
         <!-- Basic pin in- and output -->
