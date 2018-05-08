@@ -25,8 +25,8 @@ package de.uos.inf.did.abbozza.arduino.handler;
 import cc.arduino.packages.BoardPort;
 import com.sun.net.httpserver.HttpExchange;
 import de.uos.inf.did.abbozza.arduino.Abbozza;
-import de.uos.inf.did.abbozza.AbbozzaLocale;
-import de.uos.inf.did.abbozza.AbbozzaLogger;
+import de.uos.inf.did.abbozza.core.AbbozzaLocale;
+import de.uos.inf.did.abbozza.core.AbbozzaLogger;
 import de.uos.inf.did.abbozza.handler.AbstractHandler;
 import java.io.IOException;
 import java.util.List;
@@ -51,7 +51,6 @@ public class BoardHandler extends AbstractHandler {
         this._query = query;
     }
 
-    @Override
     protected void myHandle(HttpExchange exchg) throws IOException {
         connectToBoard(exchg, this._query);
     }
@@ -146,6 +145,11 @@ public class BoardHandler extends AbstractHandler {
         } catch (IOException ex) {
             return false;
         }
+    }
+
+    @Override
+    protected void handleRequest(HttpExchange exchg) throws IOException {
+        connectToBoard(exchg, this._query);
     }
 
 }

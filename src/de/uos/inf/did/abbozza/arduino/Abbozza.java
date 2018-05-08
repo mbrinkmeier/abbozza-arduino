@@ -31,15 +31,16 @@ import processing.app.PreferencesData;
 import processing.app.tools.Tool;
 
 import com.sun.net.httpserver.*;
-import de.uos.inf.did.abbozza.AbbozzaConfigDialog;
-import de.uos.inf.did.abbozza.AbbozzaLocale;
-import de.uos.inf.did.abbozza.AbbozzaLogger;
-import de.uos.inf.did.abbozza.AbbozzaServer;
+import de.uos.inf.did.abbozza.core.AbbozzaConfigDialog;
+import de.uos.inf.did.abbozza.core.AbbozzaLocale;
+import de.uos.inf.did.abbozza.core.AbbozzaLogger;
+import de.uos.inf.did.abbozza.core.AbbozzaServer;
 import de.uos.inf.did.abbozza.arduino.handler.BoardHandler;
 import de.uos.inf.did.abbozza.handler.SerialHandler;
 import de.uos.inf.did.abbozza.plugin.PluginConfigPanel;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.InputStream;
 import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
@@ -422,6 +423,16 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
     public String getSystemVersion() {
         return SYS_VERSION;
     };
+
+    @Override
+    public boolean installPluginFile(InputStream stream, String name) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void installUpdate(String version, String updateUrl) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 
 }
