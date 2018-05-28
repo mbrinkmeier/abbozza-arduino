@@ -80,6 +80,7 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
     private Editor editor;
 
     public static URI jarUri;
+    public static URI jarCommonUri;
 
     public static boolean isGlobal;
     public static boolean localExists;
@@ -94,6 +95,8 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
             // Get jar file
             jarUri = Abbozza.class.getProtectionDomain().getCodeSource().getLocation().toURI();
             System.out.println("abbozza!: Initializing " + jarUri.getPath());
+            jarCommonUri = AbbozzaServer.class.getProtectionDomain().getCodeSource().getLocation().toURI();
+            System.out.println("abbozza!: Initializing " + jarCommonUri.getPath());
 
             // Get 
             File sketchbookFolder = BaseNoGui.getSketchbookFolder();
@@ -200,6 +203,7 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         jarHandler.addDir(abbozzaPath + "tools/Abbozza", "Global directory");
         // jarHandler.addJar(runtimePath + "tools/Abbozza/tool/abbozza-arduino.jar", "Global jar");
         jarHandler.addJar(jarUri, "Jar");        
+        jarHandler.addJar(jarCommonUri, "Jar common");        
     }
 
     public void adaptConfigDialog(AbbozzaConfigDialog dialog) {
