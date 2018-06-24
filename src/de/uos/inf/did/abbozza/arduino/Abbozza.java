@@ -35,6 +35,7 @@ import de.uos.inf.did.abbozza.core.AbbozzaLocale;
 import de.uos.inf.did.abbozza.core.AbbozzaLogger;
 import de.uos.inf.did.abbozza.core.AbbozzaServer;
 import de.uos.inf.did.abbozza.arduino.handler.BoardHandler;
+import de.uos.inf.did.abbozza.core.AbbozzaServerException;
 import de.uos.inf.did.abbozza.handler.SerialHandler;
 import de.uos.inf.did.abbozza.plugin.PluginConfigPanel;
 import java.io.ByteArrayOutputStream;
@@ -55,6 +56,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import jssc.SerialPort;
 import processing.app.Base;
@@ -145,7 +147,16 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         super.init("arduino");
 
         if (config.startAutomatically()) {
-            startServer();
+            // Try to start server on given port
+            int serverPort = config.getServerPort();
+            try {
+              this.startServer(serverPort);
+            } catch (AbbozzaServerException ex) {
+              JOptionPane.showMessageDialog(null, AbbozzaLocale.entry("msg. already_running"),"",JOptionPane.ERROR_MESSAGE);
+              AbbozzaLogger.err(ex.getMessage());
+              return;
+            }
+
             if (config.startBrowser()) {
                 startBrowser("arduino.html");
             }
@@ -164,14 +175,23 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
             return;
         }
 
-        startServer();
+        // Try to start server on given port
+        int serverPort = config.getServerPort();
+        try {
+          this.startServer(serverPort);
+        } catch (AbbozzaServerException ex) {
+          AbbozzaLogger.err(ex.getMessage());
+          JOptionPane.showMessageDialog(null, AbbozzaLocale.entry("msg. already_running"),"",JOptionPane.ERROR_MESSAGE);
+          return;
+        }
+    
         startBrowser("arduino.html");
     }
 
+    
     @Override
     public void setPaths() {
         super.setPaths();
-
         sketchbookPath = PreferencesData.get("sketchbook.path");
         if (sketchbookPath.contains("%HOME%")) {
             sketchbookPath = sketchbookPath.replace("%HOME%", System.getProperty("user.home"));
