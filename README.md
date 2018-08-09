@@ -27,12 +27,12 @@ It allows graphical programming with [scratch-like blocks](http://scratch.mit.ed
 
 ## How to build
 
-**abbozza-arduino** is a Netbeans Project.
+**abbozza-arduino** is a Netbeans/Ant project.
 
 ### Manual build
 
 #### Preparations
-Prepare a directory which may hold all required projects. In addition `ant`, and Java Developement Kit ( at least JDK 8)
+Prepare a directory which may hold all required projects. In addition `ant`, and Java Developement Kit (at least JDK 8)
 need to be installed. In addition the [Arduino IDE](http://arduino.cc) needs to be installed.
 
 #### 1st Step
@@ -47,6 +47,25 @@ abboza-common and abbozza-calliope are at the same level):
 `git clone https://github.com/mbrinkmeier/abbozza-arduino.git`.
 Change into `abbozza-arduino` and execute `ant`.
 
-#### 3rd Step
-The installer jar can be found in `abbozza-arduino/dist`. Run it:
-`java -jar abbozza-arduino.jar`
+### Setting up the test environment
+
+The [arduino IDE](https://arduino.cc) has to be installed. Start it once. 
+A directory called `Arduino` will  be created in your home directory. Lets
+`<Arduino>` be this path.
+
+Open the projects [abbozza-common](https://github.com/mbrinkmeier/abbozza-common) and
+[abbozza-arduino](https://github.com/mbrinkmeier/abbozza-arduino) in NetBeans an build them.
+Let `<abbozza-arduino>` be the path of the repository.
+
+Create the directory `<Arduino>/tools/Abbozza/tool` and create a symbolic link
+inside ths directory to `<abbozza-arduino>/dist/abbozza-arduino.jar` (which only
+exists after a successful build).
+
+
+**Linux and MacOs**
+
+`ln -s  <abbozza-arduino>/dist/abbozza-arduino.jar <Arduino>/tools/Abbozza/tool/abbozza-arduino.jar`
+
+**Windows (as Administrator)**
+
+`mklink <Arduino>\tools\Abbozza\tool\abbozza-arduino.jar <abbozza-arduino>\dist\abbozza-arduino.jar`
