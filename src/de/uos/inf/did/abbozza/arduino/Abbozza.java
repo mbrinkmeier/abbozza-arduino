@@ -67,8 +67,8 @@ import processing.app.packages.UserLibrary;
 public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
 
     public static final int SYS_MAJOR = 1;
-    public static final int SYS_MINOR = 0;
-    public static final int SYS_REV = 2;
+    public static final int SYS_MINOR = 1;
+    public static final int SYS_REV = 1;
     public static final int SYS_HOTFIX = 0;
     public static final String SYS_REMARK = "(arduino)";
     public static final String SYS_VERSION = SYS_MAJOR + "." + SYS_MINOR + "." + SYS_REV + "." + SYS_HOTFIX + " " + SYS_REMARK;
