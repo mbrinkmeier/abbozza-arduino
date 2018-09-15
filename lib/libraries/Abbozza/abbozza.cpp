@@ -32,12 +32,14 @@ void writeByteToUSB(int value) {
 
 void writeIntToUSB(int value) {
     long val = (long) value;
-    byte buf[4];
-    buf[0] = ( val >> 24 ) % 256;
-    buf[1] = ( val >> 16 ) % 256;
-    buf[2] = ( val >> 8 ) % 256;
-    buf[3] = val % 256;
-    Serial.write(buf,4);
+    byte buf[6];
+    buf[0] = 42;
+    buf[1] = ( val >> 24 ) % 256;
+    buf[2] = ( val >> 16 ) % 256;
+    buf[3] = ( val >> 8 ) % 256;
+    buf[4] = val % 256;
+    buf[5] = (buf[1] ^ buf[2] ^ buf[3] ^ buf[4]);
+    Serial.write(buf,6);
 }
 
 
@@ -50,9 +52,17 @@ int readIntFromUSB() {
     int val;
     long read;
     byte buf[4];
-    if ( Serial.available() > 3 ) {
+    byte start;
+    byte checksum;
+    if ( Serial.available() > 5 ) {
+        start = Serial.read();
+        if ( start != 42 ) {
+            return 0;
+        }
         Serial.readBytes(buf,4);
         read = ( buf[0] << 24 ) | (buf[1] << 16 ) | ( buf[2] << 8 ) | buf[3];
+        checksum = Serial.read();
+        // Ignore checksum            
         return (int) read;
     } else {
         return 0;
