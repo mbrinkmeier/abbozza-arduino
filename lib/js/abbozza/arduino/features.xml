@@ -269,7 +269,18 @@
             <block type="serial_print"></block>
             <block type="serial_println"></block>
             <block type="serial_readln"></block>
-            <!--block type="serial_write_byte"></block -->
+            <block type="serial_write_byte">
+                <value name="VALUE">
+                    <block type="math_number"><mutation confirmed="false"/></block>
+                </value>                
+            </block>
+            <block type="serial_read_byte"></block>
+            <block type="serial_write_int">
+                <value name="VALUE">
+                    <block type="math_number"><mutation confirmed="false"/></block>
+                </value>              
+            </block>
+            <block type="serial_read_int"></block>
             <block type="serial_table"></block>
         </category>
     </feature>
