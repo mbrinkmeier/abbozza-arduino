@@ -36,6 +36,7 @@ import de.uos.inf.did.abbozza.core.AbbozzaLogger;
 import de.uos.inf.did.abbozza.core.AbbozzaServer;
 import de.uos.inf.did.abbozza.arduino.handler.BoardHandler;
 import de.uos.inf.did.abbozza.core.AbbozzaServerException;
+import de.uos.inf.did.abbozza.core.AbbozzaVersion;
 import de.uos.inf.did.abbozza.handler.SerialHandler;
 import de.uos.inf.did.abbozza.install.InstallTool;
 import de.uos.inf.did.abbozza.plugin.PluginConfigPanel;
@@ -65,13 +66,6 @@ import processing.app.BaseNoGui;
 import processing.app.packages.UserLibrary;
 
 public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
-
-    public static final int SYS_MAJOR = 1;
-    public static final int SYS_MINOR = 1;
-    public static final int SYS_REV = 3;
-    public static final int SYS_HOTFIX = 0;
-    public static final String SYS_REMARK = "(arduino)";
-    public static final String SYS_VERSION = SYS_MAJOR + "." + SYS_MINOR + "." + SYS_REV + "." + SYS_HOTFIX + " " + SYS_REMARK;
 
     public static Color COLOR = new Color(91, 103, 165);
     private static int counter;
@@ -153,7 +147,7 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
             try {
               this.startServer(serverPort);
             } catch (AbbozzaServerException ex) {
-              JOptionPane.showMessageDialog(null, AbbozzaLocale.entry("msg. already_running"),"",JOptionPane.ERROR_MESSAGE);
+              JOptionPane.showMessageDialog(null, AbbozzaLocale.entry("msg.already_running"),"",JOptionPane.ERROR_MESSAGE);
               AbbozzaLogger.err(ex.getMessage());
               return;
             }
@@ -182,7 +176,7 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
           this.startServer(serverPort);
         } catch (AbbozzaServerException ex) {
           AbbozzaLogger.err(ex.getMessage());
-          JOptionPane.showMessageDialog(null, AbbozzaLocale.entry("msg. already_running"),"",JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showMessageDialog(null, AbbozzaLocale.entry("msg.already_running"),"",JOptionPane.ERROR_MESSAGE);
           return;
         }
     
@@ -433,7 +427,7 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
     }
 
     public String getSystemVersion() {
-        return SYS_VERSION;
+        return AbbozzaVersion.asString();
     }
 
     ;
