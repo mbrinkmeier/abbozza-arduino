@@ -142,25 +142,33 @@ public class AbbozzaInstaller extends javax.swing.JFrame {
         String osName = installTool.getSystem();
         String userDir = installTool.getUserDir();
         String prefName = userDir;
+        String oldPrefName;
                 
         if (osName.equals("Linux")) {
             sketchbookDir = prefName + "/Arduino/";
-            prefName = prefName + "/.arduino15/preferences.txt";
+            prefName = prefName + "/.arduino/preferences.txt";
+            oldPrefName = prefName + "/.arduino15/preferences.txt";
         } else if (osName.equals("Mac")) {
             sketchbookDir = prefName + "/Documents/Arduino/";
-            prefName = prefName + "/Library/Arduino15/preferences.txt";
+            prefName = prefName + "/Library/Arduino/preferences.txt";
+            oldPrefName = prefName + "/Library/Arduino15/preferences.txt";
         } else if (osName.equals("Win")) {
             sketchbookDir = prefName + "\\Documents\\Arduino\\";
-            prefName = prefName + "\\AppData\\Local\\Arduino15\\preferences.txt";
+            prefName = prefName + "\\AppData\\Local\\Arduino\\preferences.txt";
+            oldPrefName = prefName + "\\AppData\\Local\\Arduino15\\preferences.txt";
         } else {
             sketchbookDir = prefName + "/AppData/Roaming/Arduino/";
-            prefName = prefName + "/AppData/Roaming/Arduino15/preferences.txt";
+            prefName = prefName + "/AppData/Roaming/Arduino/preferences.txt";
+            oldPrefName = prefName + "/AppData/Roaming/Arduino15/preferences.txt";
         }
 
         Properties prefs = new Properties();
 
         try {
             File file = new File(prefName);
+            if ( !file.exists() ) {
+                file = new File(oldPrefName);
+            }
             FileInputStream is = new FileInputStream(file);
 
             InputStreamReader r = new InputStreamReader(is, Charset.forName("UTF-8"));
@@ -179,7 +187,7 @@ public class AbbozzaInstaller extends javax.swing.JFrame {
               prefs.load(r);
             }
         } catch (IOException e) {
-            return null;
+            AbbozzaLogger.err(e.getLocalizedMessage());
         } catch (IllegalArgumentException ex) {
         }
 
