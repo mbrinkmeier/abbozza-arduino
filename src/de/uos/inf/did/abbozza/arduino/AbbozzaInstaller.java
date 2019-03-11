@@ -415,10 +415,19 @@ public class AbbozzaInstaller extends javax.swing.JFrame {
             Files.copy(installerFile.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
             File libDir = new File(sketchbookDir.getAbsolutePath() + "/tools/Abbozza/lib/");
             libDir.mkdirs();
+            
             addMsg(msgDoc, AbbozzaLocale.entry("MSG.WRITING", abbozzaDir + "lib/jssc-2.8.0.jar"));
             installTool.copyFromJar(installerJar,"lib/jssc-2.8.0.jar",libDir.getAbsolutePath() + "/jssc-2.8.0.jar");
             installTool.copyFromJar(installerJar,"lib/license_jssc.txt", libDir.getAbsolutePath() + "/license_jssc.txt");
+
+            // websockets
+            addMsg(msgDoc, AbbozzaLocale.entry("MSG.WRITING", abbozzaDir + "lib/slf4j-api-1.7.25.jar"));
+            installTool.copyFromJar(installerJar, "lib/slf4j-api-1.7.25.jar", libDir.getAbsolutePath() + "/slf4j-api-1.7.25.jar");
             
+            // websockets
+            addMsg(msgDoc, AbbozzaLocale.entry("MSG.WRITING", abbozzaDir + "lib/websockets.jar"));
+            installTool.copyFromJar(installerJar, "lib/websockets.jar", libDir.getAbsolutePath() + "/websockets.jar");
+
             String scriptPath = sketchbookDir.getAbsolutePath() + "/tools/Abbozza/";
             addMsg(msgDoc, AbbozzaLocale.entry("MSG.WRITING", scriptPath + "/arduinoMonitor.[sh|bat]"));
             installTool.copyFromJar(installerJar,"lib/arduinoMonitor.sh",scriptPath + "/arduinoMonitor.sh");
