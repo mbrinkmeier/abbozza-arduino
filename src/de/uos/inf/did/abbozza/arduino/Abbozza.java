@@ -21,6 +21,7 @@
  */
 package de.uos.inf.did.abbozza.arduino;
 
+import com.fazecast.jSerialComm.SerialPort;
 import cc.arduino.packages.BoardPort;
 import de.uos.inf.did.abbozza.handler.JarDirHandler;
 import java.awt.Color;
@@ -60,7 +61,7 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-import jssc.SerialPort;
+// import jssc.SerialPort;
 import processing.app.Base;
 import processing.app.BaseNoGui;
 import processing.app.packages.UserLibrary;
@@ -396,24 +397,26 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
     }
 
     public boolean checkLibrary(String name) {
-        UserLibrary lib = Base.getLibraries().getByName(name);
+        UserLibrary lib = BaseNoGui.librariesIndexer.getInstalledLibraries().getByName(name);
+        // lib = Base.getLibraries().getByName(name);
         if (lib != null) {
             return true;
         }
         return false;
     }
 
-    public String getSerialPort() {
+    @Override
+    public SerialPort getSerialPort() {
         BoardPort port = Base.getDiscoveryManager().find(PreferencesData.get("serial.port"));
         if (port != null) {
-            return port.getAddress();
+            return SerialPort.getCommPort(port.getAddress());
         }
 
         return null;
     }
 
     public int getBaudRate() {
-        return SerialPort.BAUDRATE_115200;
+        return 115200;
     }
 
     @Override

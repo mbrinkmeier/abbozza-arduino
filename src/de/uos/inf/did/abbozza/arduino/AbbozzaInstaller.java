@@ -9,8 +9,6 @@ import de.uos.inf.did.abbozza.core.AbbozzaLocale;
 import de.uos.inf.did.abbozza.core.AbbozzaLogger;
 import de.uos.inf.did.abbozza.install.InstallTool;
 import de.uos.inf.did.abbozza.tools.GUITool;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,8 +17,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.nio.charset.Charset;
-import java.nio.file.AccessDeniedException;
-import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.Enumeration;
@@ -411,8 +407,18 @@ public class AbbozzaInstaller extends javax.swing.JFrame {
          */
         try {
             targetFile.createNewFile();
-            addMsg(msgDoc, AbbozzaLocale.entry("MSG.WRITING", abbozzaDir + "lib/abbozza-arduino.jar"));
+            addMsg(msgDoc, AbbozzaLocale.entry("MSG.WRITING", abbozzaDir + "tool/abbozza-arduino.jar"));
             Files.copy(installerFile.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            
+            addMsg(msgDoc,AbbozzaLocale.entry("MSG.WRITING", abbozzaDir + "websockets.jar"));
+            installTool.copyFromJar(installerJar, "lib/websockets.jar", abbozzaDir + "websockets.jar");
+
+            addMsg(msgDoc,AbbozzaLocale.entry("MSG.WRITING", abbozzaDir + "slf4j-api-1.7.25.jar"));
+            installTool.copyFromJar(installerJar, "lib/slf4j-api-1.7.25.jar", abbozzaDir + "slf4j-api-1.7.25.jar");
+
+            addMsg(msgDoc,AbbozzaLocale.entry("MSG.WRITING", abbozzaDir + "jSerialComm-2.4.2.jar"));
+            installTool.copyFromJar(installerJar, "lib/jSerialComm-2.4.2.jar", abbozzaDir + "jSerialComm-2.4.2.jar");
+            
             File libDir = new File(sketchbookDir.getAbsolutePath() + "/tools/Abbozza/lib/");
             libDir.mkdirs();
             addMsg(msgDoc, AbbozzaLocale.entry("MSG.WRITING", abbozzaDir + "lib/jssc-2.8.0.jar"));
