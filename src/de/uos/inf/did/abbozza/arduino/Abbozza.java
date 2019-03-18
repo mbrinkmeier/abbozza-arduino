@@ -486,4 +486,9 @@ public class Abbozza extends AbbozzaServer implements Tool, HttpHandler {
         }
     }
 
+    @Override
+    public boolean canChangeSketchbookPath() {
+        return false;
+    }
+
 }
